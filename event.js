@@ -1,6 +1,8 @@
 vipUrls = {
     "云解析" : ["http://jiexi.92fz.cn/player/vip.php?url=", "http://jiexi.92fz.cn/player/jiexi.php?url=视频地址&ad=广告地址"]
-}
+};
+
+const readMeUrl = "https://github.com/BoyceLiu/vip-video-parser/blob/master/README.md";
 
 // 添加视频解析菜单
 chrome.contextMenus.create({
@@ -28,6 +30,6 @@ chrome.contextMenus.onClicked.addListener(function (menuItem) {
         }
     } else if (menuItem.menuItemId == "help menu") {
         // 打开使用手册
-        console.log("help menu");
+        chrome.tabs.create({url: readMeUrl})
     }
 });
