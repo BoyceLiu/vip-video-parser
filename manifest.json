@@ -1,0 +1,36 @@
+{
+    "manifest_version" : 2,
+    "name" : "vip视频解析",
+    "version" : "0.1.0",
+    "description" : "vip视频解析，支持腾讯视频、爱奇艺、芒果TV、优酷、哔哩哔哩、搜狐、乐视、土豆、56视频等",
+    "permissions" : ["contextMenus", "tabs"],
+    "background" : {
+        "scripts" : ["event.js"],
+        "persistent" : false
+    },
+    "content_scripts" : [{
+        "matches" : [
+            "*://v.qq.com/x/cover/*",
+            "*://v.qq.com/x/page/*",
+            "*://*.iqiyi.com/*",
+            "*://*.mgtv.com/*",
+            "*://v.youku.com/*",
+            "*://*.bilibili.com/*",
+            "*://tv.sohu.com/*",
+            "*://*.le.com/*/ptv/vplay/*",
+            "*://video.tudou.com/v/*",
+            "*://*.56.com/*"
+        ],
+        "css" : [
+            "layer/theme/default/layer.css"
+        ],
+        "js" : [
+            "jquery-3.3.1.min.js",
+            "layer/layer.js",
+            "page.js"
+        ]
+    }],
+    "browser_action" : {
+        "default_title" : "vip视频解析"
+    }
+}
